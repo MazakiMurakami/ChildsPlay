@@ -64,22 +64,27 @@ public class EnvQuerySystem : MonoBehaviour
 
                    Gizmos.color = Color.yellow;
                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
-                    Gizmos.color = Color.magenta;
+                    item.IsColliding = true;
+                    UnityEditor.Handles.Label(item.GetWorldLocation(), item.GetWorldLocation().ToString());
+                    
+
                 }
                 else
                 {
-                    
 
+                  
+                    
                     if (item.RunConditionCheck(Enemy))
-                    {
-                        Gizmos.color = Color.red;
-                        Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
-                    }
-                    else
-                    {
-                        Gizmos.color = Color.blue;
-                        Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
-                    }
+                     {
+                         Gizmos.color = Color.red;
+                         Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                     }
+                        else 
+                        {
+                         Gizmos.color = Color.blue;
+                         Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
+                        }
+                    
                 }
 
             }

@@ -8,16 +8,21 @@ public class EnvQueryItem
    public Transform QuerierT;
     public bool EnemyNearby;
     public bool IsColliding;
+    public bool CanWalk = false;
+    public int x;
+    public int z;
    
     
 
-    public EnvQueryItem(Vector3 NewPosition, Transform QuerierPos)
+    public EnvQueryItem(Vector3 NewPosition, Transform QuerierPos, int x, int z)
     {
        this.location = NewPosition;
         this.QuerierT = QuerierPos;
-        
+        this.x = x;
+        this.z = z;
     }
 
+   
     public bool RunConditionCheck(Transform enemy)
     {
         Ray ray = new Ray(GetWorldLocation(), (enemy.position - GetWorldLocation()));
@@ -47,6 +52,8 @@ public class EnvQueryItem
     {
         return QuerierT.position + location;
     }
+
+
 
 
 
