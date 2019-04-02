@@ -65,7 +65,7 @@ public class EnvQuerySystem : MonoBehaviour
                    Gizmos.color = Color.yellow;
                    Gizmos.DrawWireSphere(item.GetWorldLocation(), 0.25f);
                     item.IsColliding = true;
-                    UnityEditor.Handles.Label(item.GetWorldLocation(), item.GetWorldLocation().ToString());
+                    //UnityEditor.Handles.Label(item.GetWorldLocation(), item.GetWorldLocation().ToString());
                     
 
                 }
